@@ -1,0 +1,6 @@
+{
+  "**/*": [
+    "prettier --write --config ./.prettierrc --ignore-unknown",
+    "eslint --fix --quiet"
+  ]
+}
