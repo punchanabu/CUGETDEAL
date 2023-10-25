@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Root from './Root';
 import Navbar from './components/Navbar';
 import Register from '../src/components/User/Register';
 import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
@@ -7,7 +8,7 @@ import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Navbar />,
+    element: <Root />,
     children: [
       {
         path: 'register',
