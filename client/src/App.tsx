@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import Root from './Root';
 import Navbar from './components/Navbar';
-import Register from '../src/components/User/Register';
+import Register from './components/userAuth/Register';
 import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
-import Login from './components/User/Login';
+import Login from './components/userAuth/Login';
 
 const router = createBrowserRouter([
   {

@@ -8,6 +8,7 @@ router.use(express.json());
 
 // Define the registration route
 router.post('/register', async (req, res) => {
+
     // Access user registration data using req.body
     const { name,surname, email, password } = req.body;
 
