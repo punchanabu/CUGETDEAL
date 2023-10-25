@@ -7,8 +7,8 @@ export default function Login() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = {
-      email,
-      password
+        email,
+        password
     };
     try {
       const response = await verifyUser(data);
