@@ -1,16 +1,26 @@
 import React, { useState } from "react";
-
+import { verifyUser } from "../../api/UserApi";
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = {
             email,
             password,
         };
-        
+        try {
+            const response = await verifyUser(data);
+            if (!response.ok) {
+                console.log('error', 'Invalid email or password');
+            }
+            // set Jwt to locat storage
+            const jwt = await response.json();
+            localStorage.setItem("jwt", jwt);
+        } catch(error) {
+            console.error('error', error);
+        }
     };
 
     return (
