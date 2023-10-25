@@ -4,6 +4,7 @@ import Root from './Root';
 import Navbar from './components/Navbar';
 import Register from '../src/components/User/Register';
 import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
+import Login from './components/User/Login';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register />
+      },
+      {
+        path: 'login',
+        element: <Login/>
       }
     ]
   }

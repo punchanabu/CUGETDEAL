@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { verifyUser } from '../../api/UserApi';
+import { Navigate, useNavigate } from 'react-router-dom';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = {
@@ -15,9 +16,10 @@ export default function Login() {
       if (!response.ok) {
         console.log('error', 'Invalid email or password');
       }
-      // set Jwt to locat storage
+      // set Jwt to local storage
       const jwt = await response.json();
       localStorage.setItem('jwt', jwt);
+      navigate('/content');
     } catch (error) {
       console.error('error', error);
     }
