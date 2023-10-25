@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const mongoose = require('../config/db'); // Import the database module
-const User = require('../models/user'); // Import the User model
+const userController = require('../controllers/userController'); // Import the user controller
+
+
 
 router.use(express.json());
 
@@ -32,5 +32,6 @@ router.post('/register', async (req, res) => {
             res.status(500).json({ error: 'User registration failed' });
         });
 });
+
 
 module.exports = router;
