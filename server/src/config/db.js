@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 mongoose.connect('mongodb+srv://adminuser:lqRsyJMVL3a6i6g1@cluster0.ogkfpb5.mongodb.net/final_project', {
   useNewUrlParser: true,

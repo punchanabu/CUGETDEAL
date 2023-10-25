@@ -1,19 +1,16 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const userController = require('../controllers/userController'); // Import the user controller
-
-
-
+import {User} from '../models/user.js';
 router.use(express.json());
 
 // Define the registration route
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
 
     // Access user registration data using req.body
     const { name,surname, email, password } = req.body;
 
     // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = password; // TODO: Hash the password
 
     // Create a new user instance
     const newUser = new User({
@@ -34,4 +31,4 @@ router.post('/register', async (req, res) => {
 });
 
 
-module.exports = router;
+export {router};
