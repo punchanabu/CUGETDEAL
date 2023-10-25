@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import Register from '../src/components/Register';
+import Register from '../src/components/User/Register';
 import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
 
 const router = createBrowserRouter([
