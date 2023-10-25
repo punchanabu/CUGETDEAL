@@ -11,25 +11,32 @@ router.post('/register', async (req, res) => {
     // Access user registration data using req.body
     const { name,surname, email, password } = req.body;
 
-    // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 10);
+    // Check if email is already in use
+    const existingUser = await User.findOne({ email });
 
-    // Create a new user instance
-    const newUser = new User({
-        name,
-        surname,
-        email,
-        password: hashedPassword,
-    });
+    if (existingUser) {
+        return res.status(400).json({ error: 'Email is already in use' });
+    } else{
+        // Hash the password
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Save the user to the database
-    newUser.save()
-        .then(() => {
-            res.status(201).json({ message: 'User registered successfully' });
-        })
-        .catch((error) => {
-            res.status(500).json({ error: 'User registration failed' });
+        // Create a new user instance
+        const newUser = new User({
+            name,
+            surname,
+            email,
+            password: hashedPassword,
         });
+
+        // Save the user to the database
+        newUser.save()
+            .then(() => {
+                res.status(201).json({ message: 'User registered successfully' });
+            })
+            .catch((error) => {
+                res.status(500).json({ error: 'User registration failed' });
+            });
+    }
 });
 
 module.exports = router;
