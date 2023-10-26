@@ -9,9 +9,9 @@ interface loginData {
     email: string,
     password: string
 }
-
+const backendEndPoint = "http://localhost:3222";
 export async function createUser(user: registerData): Promise<Response> {
-    const response = await fetch('/register', {
+    const response = await fetch(`${backendEndPoint}/register`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export async function createUser(user: registerData): Promise<Response> {
 }
 
 export async function verifyUser(user: loginData): Promise<Response> {
-    const response = await fetch('/login', {
+    const response = await fetch(`{backendEndPoint}/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
