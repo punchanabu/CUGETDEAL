@@ -10,7 +10,7 @@ import JobDetail from './page/JobDetail/JobDetail';
 import CreateJob from './page/createJob/createJob';
 import Reward from './page/Reward/Reward';
 import Home from './page/Home/Home';
-import Profiel from './page/Profile/Profile';
+import Profile from './page/Profile/Profile';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path = '/' element = {<Root/>}>
     <Route index element = {<Home/>}/>
