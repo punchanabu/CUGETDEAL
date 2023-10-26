@@ -1,7 +1,11 @@
-export default function DashBoard() {
-    return (
-        <div>
-            <h1>This is the DashBoard page</h1>
-        </div>
-    )
+import React from 'react'
+
+const DashBoard = () => {
+  return (
+    <main>
+        
+    </main>
+  )
 }
+
+export default DashBoard
