@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Navbar() {
     return (
-        <main className="flex justify-between font-mono p-5 items-center">
+        <main className="flex justify-between font-mono p-5 items-center bg-white">
             <div className="flex space-x-10 items-center">
                 <h1 className = "text-2xl font-bold text-red-300"><Link to = "/">CUGETDEAL</Link></h1>
                 <Link to = "/"className="text-lg font-bold text-red-400">หน้าหลัก</Link>
