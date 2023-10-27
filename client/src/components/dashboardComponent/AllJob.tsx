@@ -14,7 +14,7 @@ interface AllJobProps {
 
 const AllJob: React.FC<AllJobProps> = ({ jobData }) => {
   return (
-    <section>
+    <section className='flex flex-col items-center space-y-5'>
         {jobData.map((data, index) => <JobHired key={index} jobData={data} />)}
     </section>
   );
