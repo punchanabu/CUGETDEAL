@@ -22,7 +22,7 @@ export const getDashboardData = async (token: string): Promise<Response> => {
 // this could be change based on backend requirements
 export const jobReceived = async (token: string, taskId: string): Promise<Response> => {
     try {
-        const response = await fetch(`${backendEndPoint}/dashboard/finish-task`, {
+        const response = await fetch(`${backendEndPoint}/dashboard/finishTask`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ export const jobReceived = async (token: string, taskId: string): Promise<Respon
 
 export const finshJob = async (token: string, taskId: string): Promise<Response> => {
     try {
-        const response = await fetch(`${backendEndPoint}/dashboard/finish-task`, {
+        const response = await fetch(`${backendEndPoint}/dashboard/finishJob`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
