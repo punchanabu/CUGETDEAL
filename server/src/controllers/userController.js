@@ -1,6 +1,7 @@
 import User from '../models/user.js';
 import bcrypt from 'bcrypt'
-
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
 // Define the registration route
 export const registerUser = async (req, res) => {
     const { name,surname, email, password } = req.body;
@@ -49,9 +50,13 @@ export const loginUser = async (req, res) => {
         if (!passwordMatch) {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
-
+        const token = jwt.sign(
+            { id: user._id, name: user.name, surname: user.surname, email: user.email }, 
+            'secretkey007', // TODO: Change this to an environment variable 
+            { expiresIn: '24h' } 
+        );
         // Create session or token for authentication...
-        res.json({ message: 'Login successful', /*...other data*/ });
+        res.status(200).json({ message: 'Login successful', token });
 
     } catch (error) {
         console.error(error);

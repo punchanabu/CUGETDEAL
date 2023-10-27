@@ -1,5 +1,6 @@
 import express from 'express';
 import * as User from '../controllers/userController.js';
+
 const loginRouter = express.Router();
 
 loginRouter.use(express.json());
