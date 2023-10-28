@@ -36,7 +36,7 @@ export default function Login() {
         </div>
         <div id="testbox">
           <div id="logo"></div>
-          <div id="pdz"></div>
+
           <div id="sp-form">
             <form onSubmit={handleSubmit}>
               <label id="email_input">
@@ -60,13 +60,16 @@ export default function Login() {
                 />
               </label>
               <br />
-              <div id="pdz"></div>
 
+              <div id="pdz"></div>
+              <div id = "ab">
               <div className="btn-sub">
                 <button type="submit" id="subbtn">
                   <span>Submit</span>
                 </button>
               </div>
+              </div>
+              
             </form>
           </div>
         </div>
