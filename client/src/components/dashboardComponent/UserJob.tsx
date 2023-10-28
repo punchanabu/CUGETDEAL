@@ -1,6 +1,6 @@
 import React from 'react';
 import { finshJob } from '../../api/DashboardApi';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 interface Contact {
   phone: string;
   email: string;
@@ -34,18 +34,19 @@ const UserJob: React.FC<UserJobProps> = ({ userJobData }) => {
         return response;
     }
   return (
-    <figure className='p-16 bg-white'>
-        <div>
-            <h1>{userJobData.title}</h1>
-            <p>{userJobData.description}</p>
-            <p>{userJobData.star}</p>
+    <figure className='p-16 bg-white rounded-xl flex space-x-5'>
+        <div className='text-red-500 space-y-4'>
+            <h1 className='text-4xl'>{userJobData.title}</h1>
+            <p className='font-bold text-md '>{userJobData.description}</p>
+            
         </div>
-        <div>
-            <button onClick={handleFinshJob}>เสร็จงานแล้วคร้บบบ</button>
-            <span>{userJobData.contact.phone}</span>
-            <span>{userJobData.contact.email}</span>
-            <span>{userJobData.contact.instagram}</span>
-            <span>{userJobData.contact.twitter}</span>
+        <div className='flex flex-col justify-center space-y-5'>
+            <div className='flex flex-col justify-center'>
+              {userJobData.contact.phone && <span>{userJobData.contact.phone}</span>}
+              {userJobData.contact.email && <span>{userJobData.contact.email}</span>}
+              {userJobData.contact.twitter && <span>{userJobData.contact.twitter}</span>}
+            </div>
+            <button onClick={handleFinshJob} className='bg-red-300 rounded-xl px-10 py-5 text-white text-xl'>เสร็จงานแล้วคร้บบบ</button>
         </div>
     </figure>
   );
