@@ -1,0 +1,47 @@
+.topzone {
+    display: flex;
+    width: 100vw;
+}
+
+.topzone .itemtext .h1 {
+    text-align: left;
+    margin-bottom: 50%;
+    color: pink;
+}
+
+.topzone .button {
+    display: block;
+    text-align: center;
+    background-color: pink;
+    border: none;
+}
+
+.findzone {
+    margin: auto;
+    width: 100vm;
+}
+
+.findzone .headerfind {
+    padding: 4px;
+}
+
+.findzone .findbar .textinput {
+    width: 100vw;
+}
+
+.listperson {
+    display: block;
+    margin-top: 5%;
+}
+
+.listperson .moredetail {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: white;
+    background-color: pink;
+    border-radius: 10%;
+    border: none;
+}
