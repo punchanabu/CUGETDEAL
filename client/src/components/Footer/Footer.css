@@ -1,0 +1,30 @@
+main {
+    background-color: #F7A6A6;
+    color: #fff;
+    padding: 20px 0; 
+    text-align: center; 
+    z-index: 999;
+    position: relative;
+    background-position: bottom center;
+}
+#footers {
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+#textfooter{
+
+    padding-right: 30px;
+    padding-left: 30px;
+}
+#footergetdeal{
+    font-size: 40px;
+    font-weight: bold;
+}
+#footergetdeal2{
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+#description{
+    font-size: 25px;
+}
