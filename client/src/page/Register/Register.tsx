@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import { createUser } from '../../api/UserApi';
+import { Navigate, useNavigate } from 'react-router-dom';
 export default function Register() {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleSubmit = (event: any) => {
     event.preventDefault();
     const data = {
@@ -16,6 +17,7 @@ export default function Register() {
       password
     };
     createUser(data);
+    navigate('/login');
   };
   return (
     <main className="flex justify-center items-center h-screen bg-form font-bold">
