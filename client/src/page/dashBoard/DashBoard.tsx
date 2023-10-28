@@ -4,6 +4,7 @@ import UserJobList from '../../components/dashboardComponent/UserJobList';
 import { getDashboardData } from '../../api/DashboardApi';
 import { useNavigate } from 'react-router-dom';
 import './db.css'
+import { getUserId } from '../../api/UserApi';
 const fakeData = [ 
   {title: 'kuay', description: 'description zawarudo tokiotomare', star: 3, status: 'doing'},
   {title: 'kuay2', description: 'description2 zawarudo tokiotomare', star: 2, status: 'done'},
@@ -32,7 +33,8 @@ const DashBoard = () => {
       navigate('/login') // if you don't have token you go login first krub.
       return;
     }
-    const response = await getDashboardData(token);
+    const userId = await getUserId(token);
+    const response = await getDashboardData(token, userId);
     if (!response.ok) {
       return;
     }
@@ -52,19 +54,19 @@ const DashBoard = () => {
 
   // use effect
   React.useEffect(() => {
-    // getJobData();
+    getJobData();
   },[]);
 
 
   return (
-    <main className="flex flex-col items-center justify-center h-full font-mono space-y-10 custom-bg">
+    <main className="flex flex-col items-center  h-full font-mono space-y-10 custom-bg h-screen">
         <h1 className='text-6xl drop-shadow-md font-black text-white mt-14 mb-11'>Dashboard</h1>
         <section className='space-x-10 flex'>
           <button onClick={handleShowAllJobs} className='w-full bg-red-300 rounded-xl font-bold py-4 px-10 text-white text-2xl shadow-md'>Follow up Task</button>
           <button onClick = {handleShowUserJobs} className='w-full bg-white rounded-xl font-bold py-4 px-10 text-2xl text-red-400 shadow-md'>Jobs to do</button>
         </section>
         <section className='flex flex-col items-center space-y-3'>
-          {showAllJobs ? <AllJob jobData = {fakeData} /> : <UserJobList userJobData = {fakeUserJobData} />}
+          {showAllJobs ? <AllJob jobData = {jobData} /> : <UserJobList userJobData = {userJobData} />}
         </section>
     </main>
   )

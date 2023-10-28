@@ -33,3 +33,24 @@ export async function verifyUser(user: loginData): Promise<Response> {
 
     return response;
 }
+
+export async function getUserId(token: string) {
+    try {
+        const response = await fetch(`${backendEndPoint}/getUserId`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log("USER ID is:", data);
+            return data;
+        } else {
+            console.log("Failed to fetch user ID");
+        }
+    } catch(error) {
+        console.log("Failed to fetch user ID", error);
+    }
+}
