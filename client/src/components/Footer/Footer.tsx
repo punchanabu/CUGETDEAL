@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import './Footer.css';
 export default function footer() {
     return (
-    <main>
+    <div id="footer-component">
     <div id = "footers">
       <div id = "textfooter">
       <h1 id = "footergetdeal">CUGETDEAL</h1>
@@ -11,6 +11,6 @@ export default function footer() {
       <h1 id = "footergetdeal2"> All Right Reserved | Designed By CUGETDEAL</h1>
       </div>
     </div>
-    </main>
+    </div>
     )
 }
