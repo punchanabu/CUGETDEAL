@@ -26,8 +26,8 @@ export default function Register() {
             <div id="pinkholder"></div>
           </div>
         </div>
-        <div id="testbox">
-        <div id="logo"></div>
+        <div id="testbox2">
+        <div id="logo2"></div>
 
         <div id="sp-form">
           <form onSubmit={handleSubmit}>
@@ -35,7 +35,7 @@ export default function Register() {
               <div>
                 <label htmlFor="name" id="email_input "></label>
                 <input
-                  id="input_border"
+                  id="input_border2"
                   type="text"
                   name="name"
 
@@ -50,7 +50,7 @@ export default function Register() {
                 <input
                   type="text"
                   name="surname"
-                  id="input_border"
+                  id="input_border2"
                   placeholder="Surname"
                   onChange={(e) => setSurname(e.target.value)}
                   value={surname}
@@ -63,7 +63,7 @@ export default function Register() {
               <input
                 type="email"
                 name="email"
-                id="input_border"
+                id="input_border2"
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -75,7 +75,7 @@ export default function Register() {
               <input
                 type="password"
                 name="password"
-                id="input_border"
+                id="input_border2"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
