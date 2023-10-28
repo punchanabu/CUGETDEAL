@@ -32,13 +32,13 @@ export const getbyID = async (req, res) => {
 export const create = async (req, res) => {
     try {
         const { userId, JobAssign, UserJob } = req.body;
-        const user = await User.findById(userId);
+        const user = await User.findById(userId.userId);
         if (!user) {
             return res.status(404).send('User not found');
         }
 
         const newDashboard = new Dashboard({
-            userId,
+            userId: userId.userId,
             JobAssign,
             UserJob
         });
