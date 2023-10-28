@@ -1,7 +1,6 @@
 import User from '../models/user.js';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
 // Define the registration route
 export const registerUser = async (req, res) => {
     const { name,surname, email, password } = req.body;
@@ -41,7 +40,6 @@ export const loginUser = async (req, res) => {
     }
     try {
         const user = await User.findOne({ email });
-        console.log(user)
         if (!user) {
             return res.status(400).json({ message: 'Invalid email or password' });
         }
