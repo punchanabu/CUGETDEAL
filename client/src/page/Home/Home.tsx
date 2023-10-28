@@ -4,8 +4,7 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div id = "body2" className="w-screen h-screen">
-    <div id = "bg-gradient">
+ 
     <div className="w-screen h-screen p-10" id = "make-padding-buttom">
     <div className="text-container">
     <h1 className="text-white text-2xl font-bold" id = "headertext">สวัสดี! ,หางานอยู่หรอ?</h1>
@@ -41,8 +40,7 @@ const Home = () => {
     </div>
 
     </div>
-    </div>
-    </div>
+
 
   )
 

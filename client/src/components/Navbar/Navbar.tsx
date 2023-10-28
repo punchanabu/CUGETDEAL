@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './Navbar.css';
 export default function Navbar() {
     return (
+        <div>
         <main className="flex justify-between font-mono p-5 items-center bg-white" id= "Navbar">
             <div className="flex space-x-10 items-center" id="spaceflex">
                 <h1 className = "text-2xl font-bold text-red-300"><Link to = "/">CUGETDEAL</Link></h1>
@@ -15,6 +16,11 @@ export default function Navbar() {
                 <Link to = "/login">Login | </Link>
                 <Link to = "/Register">Register</Link>
             </div>
-        </main>        
+        </main>
+        <div id = "body2" className="w-screen h-screen">
+    <div id = "bg-gradient">
+    </div>
+    </div>
+        </div>        
     )
 }
