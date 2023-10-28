@@ -23,7 +23,7 @@ export async function createUser(user: registerData): Promise<Response> {
 }
 
 export async function verifyUser(user: loginData): Promise<Response> {
-    const response = await fetch(`{backendEndPoint}/login`, {
+    const response = await fetch(`${backendEndPoint}/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
