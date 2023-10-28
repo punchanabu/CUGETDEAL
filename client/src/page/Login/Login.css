@@ -1,7 +1,7 @@
 #bgall{
     width: 100%;
     height: 100vh;
-    position: relative;
+    position: static !important;
     padding-left: 7%;
     padding-right: 7%;
     padding-top: 5%;
@@ -11,7 +11,7 @@
 @media screen and (max-width :767px) {
     #p-container{
  
-    
+        
         width: 100%;
         height: 100%;
         background-color: white;
@@ -37,6 +37,7 @@
     #sp-form{
         position: relative;
         width: 100%;
+        height: 100%;
     }
     
     #testbox{
@@ -47,7 +48,7 @@
     }
     
     #logo{
-        background-image: url("./imageLogin/IMG_7556.png");
+        background-image: url("./imageLogin/logologin.png");
         bottom: 0;
         background-size: 100%;
         height: 25%;
@@ -127,7 +128,7 @@
     }
     
     .btn-sub{
-        padding-top: 30%;
+        
         width: 100%;
     }
     
@@ -210,6 +211,7 @@
     #sp-form{
         position: relative;
         width: 100%;
+        height: 100%;
     }
     
     #testbox{
@@ -220,7 +222,7 @@
     }
     
     #logo{
-        background-image: url("./imageLogin/IMG_7556.png");
+        background-image: url("./imageLogin/logologin.png");
 
         bottom: 0;
         background-size: 80%;
@@ -357,7 +359,7 @@
 @media screen and (min-width :1201px) {
     #p-container{
         display: flex;
-    
+        position: static;
         width: 100%;
         height: 100%;
         background-color: white;
@@ -395,11 +397,14 @@
     }
     
     #sp-form{
-        position: relative;
+
         width: 100%;
+        height: 100%;
     }
     
     #testbox{
+        display: flex;
+        flex-direction: column;
         padding: 75px;
         border-radius: 35px;
         width: 100%;
@@ -407,10 +412,13 @@
     }
     
     #logo{
-        background-image: url("./imageLogin/IMG_7556.png");
+        display: flex;
+        flex-direction: column;
+        background-image: url("./imageLogin/logologin.png");
         bottom: 0;
         background-size: 100%;
-        height: 25%;
+        height: 50%;
+        width: 100%;
         background-repeat: no-repeat;
         background-position: left center;
     }
@@ -426,7 +434,7 @@
         background-color: #ffffff;
         border-radius: 35px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      
+        position:relative;
         /* border-radius: 45px;
         width: 100%;
         border: 300px;
@@ -468,13 +476,13 @@
         left: 50%;
     
     }
-    
+
     #subbtn{
        
         padding-top: 0;
         width: 100%;
-    
         position:relative;
+        flex-direction: column;
         display: flex;
         justify-content: center;
         align-items: center;
