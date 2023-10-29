@@ -7,7 +7,7 @@ interface ProfileDataProps {
   country: string;
   email: string;
   tel: string;
-  faculthy: string;
+  faculty: string;
   univer: string;
   description: string;
   interest: string;
@@ -20,7 +20,7 @@ const ProfileView: React.FC<ProfileDataProps> = ({
   country,
   email,
   tel,
-  faculthy,
+  faculty,
   univer,
   description,
   interest,
@@ -61,7 +61,7 @@ const ProfileView: React.FC<ProfileDataProps> = ({
                 />
               </svg>
               <p>
-                {location}, {country}
+                {location} {country}
               </p>
             </div>
 
@@ -105,7 +105,7 @@ const ProfileView: React.FC<ProfileDataProps> = ({
       </div>
 
       <div className="shadow-lg m-4 p-7 border-2 rounded-md bg-[#FFFFFF]">
-        <h3 className="text-xl p-1">คณะที่กำลังศึกษา : {faculthy}</h3>
+        <h3 className="text-xl p-1">คณะที่กำลังศึกษา : {faculty}</h3>
         <h3 className="text-xl p-1">มหาวิทยาลัยที่กำลังศึกษา : {univer}</h3>
       </div>
 

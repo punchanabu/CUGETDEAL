@@ -23,7 +23,7 @@ const profileSchema = new Schema({
         type: String,
         default: ""
     },
-    faculthy: {
+    faculty: {
         type: String,
         default: ""
     },

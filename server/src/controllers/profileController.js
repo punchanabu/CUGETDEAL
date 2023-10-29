@@ -2,7 +2,7 @@ import Profile from "../models/profile.js";
 
 export const initProfile = async (req, res) => {
   try {
-    const requestingUserId = req.authData.id;
+    const requestingUserId = req.params.id;
     const profile = await Profile.findOne({
       userId: requestingUserId,
     }).populate("userId", "-password");
@@ -29,7 +29,7 @@ export const updateProfile = async (req, res) => {
       country,
       email,
       tel,
-      faculthy,
+      faculty,
       univer,
       description,
       interest,
@@ -42,7 +42,7 @@ export const updateProfile = async (req, res) => {
       country === undefined ||
       email === undefined ||
       tel === undefined ||
-      faculthy === undefined ||
+      faculty === undefined ||
       univer === undefined ||
       description === undefined ||
       interest === undefined
@@ -62,13 +62,13 @@ export const updateProfile = async (req, res) => {
     profile.country = country;
     profile.email = email;
     profile.tel = tel;
-    profile.faculthy = faculthy;
+    profile.faculty = faculty;
     profile.univer = univer;
     profile.description = description;
     profile.interest = interest;
     await profile.save();
 
-    res.status(201).json("updated profile success");
+    res.status(200).json("updated profile success");
   } catch (err) {
     console.error(err);
     res.status(500).send("Internal Server Error");
@@ -89,7 +89,7 @@ export const getProfile = async (req, res) => {
         country: profile.country,
         email: profile.email,
         tel: profile.tel,
-        faculthy: profile.faculthy,
+        faculty: profile.faculty,
         univer: profile.univer,
         description: profile.description,
         interest: profile.interest,

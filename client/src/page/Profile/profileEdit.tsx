@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { updateUserProfile } from "../../api/profileApi";
 
 interface ProfileDataProps {
   name: string;
@@ -7,7 +8,7 @@ interface ProfileDataProps {
   country: string;
   email: string;
   tel: string;
-  faculthy: string;
+  faculty: string;
   univer: string;
   description: string;
   interest: string;
@@ -15,16 +16,17 @@ interface ProfileDataProps {
 }
 
 const ProfileEdit: React.FC<ProfileDataProps> = ({
-  name,
-  surname,
-  location,
-  country,
-  email,
-  tel,
-  faculthy,
-  univer,
-  description,
-  interest,
+  // set default value
+  name = "",
+  surname = "",
+  location = "",
+  country = "",
+  email = "",
+  tel = "",
+  faculty = "",
+  univer = "",
+  description = "",
+  interest = "",
   onSave,
 }) => {
   const [formData, setFormData] = useState<ProfileDataProps>({
@@ -34,7 +36,7 @@ const ProfileEdit: React.FC<ProfileDataProps> = ({
     country,
     email,
     tel,
-    faculthy,
+    faculty,
     univer,
     description,
     interest,
@@ -48,9 +50,19 @@ const ProfileEdit: React.FC<ProfileDataProps> = ({
     setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSave(formData);
+    try {
+      const response = await updateUserProfile(formData, localStorage.getItem("jwt"));
+      if(response.status === 200) {
+        console.log('Profile updated successfully:', response.data);
+      } else {
+        console.error('Failed to update profile:', response.statusText);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
   };
 
   return (
@@ -85,7 +97,7 @@ const ProfileEdit: React.FC<ProfileDataProps> = ({
                   className="my-2 w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </h3>
-              <div className="flex justify-center m-2">
+              <div className="flex justify-center items-center m-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -106,7 +118,6 @@ const ProfileEdit: React.FC<ProfileDataProps> = ({
                   />
                 </svg>
                 <p>
-                  {location}, {country}
                   <input
                     type="text"
                     name="location"
@@ -185,9 +196,9 @@ const ProfileEdit: React.FC<ProfileDataProps> = ({
               <p>คณะที่กำลังศึกษา :</p>
               <input
                 type="text"
-                name="faculthy"
-                id="faculthy"
-                value={formData.faculthy}
+                name="faculty"
+                id="faculty"
+                value={formData.faculty}
                 onChange={handleChange}
                 className="my-2 w-full shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />

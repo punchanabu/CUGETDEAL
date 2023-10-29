@@ -1,26 +1,81 @@
-import React, { useState } from "react";
-import ProfileEdit from "./profileEdit";
+import React, { useState, useEffect } from "react";
 import ProfileView from "./profileView";
+import ProfileEdit from "./profileEdit";
+import { fetchUserProfile } from "../../api/profileApi";
+
+interface ProfileData {
+  name: string;
+  surname: string;
+  location: string;
+  country: string;
+  email: string;
+  tel: string;
+  faculty: string;
+  univer: string;
+  description: string;
+  interest: string;
+}
+
+const defaultProfileData: ProfileData = {
+  name: "",
+  surname: "",
+  location: "",
+  country: "",
+  email: "",
+  tel: "",
+  faculty: "",
+  univer: "",
+  description: "",
+  interest: ""
+};
+
+const fetchData = async (): Promise<any> => {
+  const token = localStorage.getItem("jwt");
+  const profile = await fetchUserProfile(token);
+  return profile;
+}
 
 const Profile = () => {
+  const [profile, setProfile] = useState<ProfileData>(defaultProfileData);
   const [isEdit, setIsEdit] = useState(false);
-  const [data, setData] = useState({
-    name: "Hello",
-    surname: "World",
-    location: "bangkok",
-    country: "Thailand",
-    email: "araimairu@gmail.com",
-    tel: "12345",
-    faculthy: "ComEng",
-    univer: "chula",
-    description: "description here...",
-    interest: "data analysis"
-  });
+  const [data, setData] = useState<ProfileData>(defaultProfileData);
+  // const [data, setData] = useState({
+    // name: "Hello",
+    // surname: "World",
+    // location: "bangkok",
+    // country: "Thailand",
+    // email: "araimairu@gmail.com",
+    // tel: "12345",
+    // faculty: "ComEng",
+    // univer: "chula",
+    // description: "description here...",
+    // interest: "data analysis"
+  // });
+
+  useEffect(() => {
+      const getData = async () => {
+          const fetchedProfile = await fetchData();
+          setProfile(fetchedProfile);
+          setData({
+              name: fetchedProfile.name,
+              surname: fetchedProfile.surname,
+              location: fetchedProfile.location,
+              country: fetchedProfile.country,
+              email: fetchedProfile.email,
+              tel: fetchedProfile.tel,
+              faculty: fetchedProfile.faculty,
+              univer: fetchedProfile.univer,
+              description: fetchedProfile.description,
+              interest: fetchedProfile.interest
+          });
+      };
+      getData();
+  }, []);
 
   const toggleEdit = () => {
     setIsEdit(!isEdit);
   };
-  const handleSave = (updatedata: typeof data) => {
+  const handleSave = (updatedata: any) => {
     setData(updatedata);
     setIsEdit(false);
   }
@@ -45,7 +100,7 @@ const Profile = () => {
         </button>
       </div>
       {isEdit 
-        ? <ProfileEdit {...data} onSave={handleSave} />  // <-- Add onSave prop here
+        ? <ProfileEdit {...data} onSave={handleSave} />
         : <ProfileView {...data} />
       }
     </main>
