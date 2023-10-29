@@ -2,7 +2,7 @@ import Profile from "../models/profile.js";
 
 export const initProfile = async (req, res) => {
   try {
-    const requestingUserId = req.params.id;
+    const requestingUserId = req.authData.id;
     const profile = await Profile.findOne({
       userId: requestingUserId,
     }).populate("userId", "-password");
