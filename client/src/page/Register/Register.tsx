@@ -2,23 +2,51 @@ import React from 'react';
 import { useState } from 'react';
 import { createUser } from '../../api/UserApi';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { createDashboardData } from '../../api/DashboardApi';
+import { getUserId } from '../../api/UserApi';
+import { verifyUser } from '../../api/UserApi';
 export default function Register() {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
-    const data = {
-      name,
-      surname,
-      email,
-      password
-    };
-    createUser(data);
-    navigate('/login');
+    try {
+      const data = {
+        name,
+        surname,
+        email,
+        password
+      };
+    
+      // Create user
+      const userResponse = await createUser(data);
+    
+      // Check if user was created successfully
+      if (userResponse.ok) {
+        // Login user to get token
+        const loginResponse = await verifyUser({ email, password });
+        const loginData = await loginResponse.json();
+        const token = loginData.token;
+        // set token to local storage
+        localStorage.setItem('jwt', token);
+        // Create dashboard data
+        console.log("Token:",token);
+        const userId = await getUserId(token);
+        console.log(userId);
+        const createResponse = await createDashboardData(token, userId);
+        console.log(createResponse);
+        // Navigate to login or dashboard
+        navigate('/dashboard');
+      }
+     } catch(error) {
+        // Handle error
+        console.error('Failed to create user dashboard data', error);
+      }
   };
+  
   return (
     <main className="flex justify-center items-center h-screen bg-form font-bold">
       <form

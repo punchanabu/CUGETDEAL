@@ -19,7 +19,6 @@ interface JobListProps {
 
 const JobList: FC<JobListProps> = ({ list, query, filter }) => {
     const [filteredList, setFilteredList] = useState<JobData[]>([]);
-
     useEffect(() => {
         let newFilteredList = list.filter(job => 
             job.title.toLowerCase().includes(query?.toLowerCase() || '') ||
@@ -36,7 +35,7 @@ const JobList: FC<JobListProps> = ({ list, query, filter }) => {
         setFilteredList(newFilteredList);
 
     }, [list, query, filter]);
-
+    
     return (
         <main className='flex flex-col space-y-4 items-center justify-center'>
             {filteredList.map((job) => <Job key={job.userId} data={job} />)}

@@ -5,6 +5,19 @@ import { useEffect } from 'react';
 import { populateJobBoard } from '../../api/ContentApi';
 import './style.css'
 import { useNavigate } from "react-router-dom";
+interface JobForm {
+    userId: object;
+    title: string;
+    job_kind: string;
+    hire_kind: string;
+    job_period: string; // Assuming it's a string; if it's a Date, adjust accordingly.
+    description: string;
+    star: number; // Note: star (singular) to match your form state.
+}
+interface FetchedJob {
+    user: any; // adjust the type accordingly
+    home1: JobForm;
+}
 // const list = [
 //     {   
 //         userId: "12",
@@ -45,7 +58,8 @@ export default function MainContent() {
                 return;
               }
               const fetchedJobs = await populateJobBoard(token);
-              setJobs(fetchedJobs);
+              const home1Data = fetchedJobs.map((item: FetchedJob )=> item.home1);
+              setJobs(home1Data);
           } catch (error) {
               console.error('Failed to fetch jobs', error);
           } finally {

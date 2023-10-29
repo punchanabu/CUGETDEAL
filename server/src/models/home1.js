@@ -10,9 +10,9 @@ const jobSchema = new Schema({
     title: String,
     job_kind: String,
     hire_kind: String,
-    job_period: Date,
+    job_period: String,
     description: String,
-    Star: Number
+    star: Number
 });
 
 const Home1 = mongoose.model('Home1', jobSchema);

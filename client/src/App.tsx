@@ -20,7 +20,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path = '/content' element = {<MainContent/>}/>
       <Route path = '/content/:id' element = {<JobDetail/>}/>
     <Route/>
-    <Route path = '/createjob' element = {<CreateJob/>}/>
+    <Route path = '/create' element = {<CreateJob/>}/>
     <Route path = '/reward' element = {<Reward/>}/>
     <Route path = '/profile' element = {<Profile/>}/>
   </Route>

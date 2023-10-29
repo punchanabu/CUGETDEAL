@@ -3,18 +3,19 @@ import { SECRET_KEY } from '../config/env.js';
 
 function verifyToken(req, res, next) {
     const bearerHeader = req.headers['authorization'];
-    console.log(bearerHeader);
+    console.log(bearerHeader)
     if (bearerHeader) {
         const token = bearerHeader.split(' ')[1];
         jwt.verify(token, SECRET_KEY, (err, authData) => {
             if (err) {
-                return res.status(403).json({ message: 'Forbidden' }); 
+                res.sendStatus(403);
+            } else {
+                req.authData = authData;
+                next();
             }
-            req.authData = authData;
-            next();
         });
     } else {
-        return res.status(403).json({ message: 'Unauthorized' }); 
+        res.sendStatus(403).json({ message: 'Unauthorized' });
     }
 }
 

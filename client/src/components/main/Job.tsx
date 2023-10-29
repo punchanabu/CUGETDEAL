@@ -15,6 +15,7 @@ interface JobProps {
 }
 
 const Job: FC<JobProps> = ({ data }) => {
+    console.log(data.star);
     return (
         <main className='bg-white p-10 rounded-xl text-red-400 flex justify-between shadow-md w-3/4'>
             <section className='flex space-x-6'>
@@ -23,7 +24,7 @@ const Job: FC<JobProps> = ({ data }) => {
                     <h1 className='text-3xl'>{data.title}</h1>
                     <p className='font-base font-light'>{data.description}</p>
                     <div>
-                        <span>✩✩✩✩✩ ({data.star})</span>
+                        <span>✩✩✩✩✩ ({0})</span>
                     </div>
                 </section>
             </section>
