@@ -357,6 +357,13 @@
 
 
 @media screen and (min-width :1201px) {
+
+    #box-f{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
     #p-container{
         display: flex;
         position: static;
@@ -417,7 +424,7 @@
         background-image: url("./imageLogin/logologin.png");
         bottom: 0;
         background-size: 100%;
-        height: 50%;
+        height: 100%;
         width: 100%;
         background-repeat: no-repeat;
         background-position: left center;
@@ -444,7 +451,7 @@
     #pdz{
         padding: 10px;
         width: 100%;
-        height: 30px;
+
         z-index: -1;
     }
     
