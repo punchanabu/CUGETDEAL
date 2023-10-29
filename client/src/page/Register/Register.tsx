@@ -19,7 +19,7 @@ export default function Register() {
     createUser(data);
   };
   return (
-    <div id="bgall">
+    <div id="bgallz">
       <div id="p-container">
         <div id="p-content">
           <div id="login-image">
