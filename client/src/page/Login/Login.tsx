@@ -38,7 +38,7 @@ export default function Login() {
           <div id="logo"></div>
 
           <div id="sp-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id = "box-f">
               <label id="email_input">
                 <input
                   type="email"
@@ -48,8 +48,8 @@ export default function Login() {
                   onChange={(event) => setEmail(event.target.value)}
                 />
               </label>
-              <br />
-              <div id="pdz"></div>
+
+              {/* <div id="pdz"></div> */}
               <label id="password_input">
                 <input
                   type="password"
@@ -61,7 +61,7 @@ export default function Login() {
               </label>
               <br />
 
-              <div id="pdz"></div>
+              {/* <div id="pdz"></div> */}
               <div id = "ab">
               <div className="btn-sub">
                 <button type="submit" id="subbtn">
