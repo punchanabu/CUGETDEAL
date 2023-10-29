@@ -7,37 +7,21 @@ const profileSchema = new Schema({
         ref: 'User',  // This should reference the User model
         required: true 
     },
-    location: {
+    education: {
         type: String,
-        default: ""
+        required: true
     },
-    country: {
+    experience: {
         type: String,
-        default: ""
+        required: true
     },
-    email: {
+    skills: {
         type: String,
-        default: ""
-    },
-    tel: {
-        type: String,
-        default: ""
-    },
-    faculty: {
-        type: String,
-        default: ""
-    },
-    univer: {
-        type: String,
-        default: ""
-    },
-    description: {
-        type: String,
-        default: ""
+        required: true
     },
     interest: {
         type: String,
-        default: ""
+        required: true
     },
 });
 
