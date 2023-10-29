@@ -10,7 +10,7 @@ import JobDetail from './page/JobDetail/JobDetail';
 import CreateJob from './page/createJob/createJob';
 import Reward from './page/Reward/Reward';
 import Home from './page/Home/Home';
-
+import Profile from './page/Profile/Profile';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path = '/' element = {<Root/>}>
     <Route index element = {<Home/>}/>
@@ -22,6 +22,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route/>
     <Route path = '/createjob' element = {<CreateJob/>}/>
     <Route path = '/reward' element = {<Reward/>}/>
+    <Route path = '/profile' element = {<Profile/>}/>
   </Route>
 ));
 
