@@ -1,3 +1,4 @@
+import backendEndPoint from '../config/config.js';
 interface registerData {
     name: string;
     surname: string;
@@ -9,7 +10,6 @@ interface loginData {
     email: string,
     password: string
 }
-const backendEndPoint = "http://localhost:3222";
 export async function createUser(user: registerData): Promise<Response> {
     const response = await fetch(`${backendEndPoint}/register`, {
         method: 'POST',
@@ -32,4 +32,20 @@ export async function verifyUser(user: loginData): Promise<Response> {
     });
 
     return response;
+}
+
+export async function autoLogin(user: loginData): Promise<void> {
+    try {
+        const response = await verifyUser(user);
+        if (!response.ok) {
+            console.error('Auto login failed');
+            return;
+        }
+
+        const loginData = await response.json();
+        const jwt = loginData.token;
+        localStorage.setItem('jwt', jwt);
+    } catch (error) {
+        console.error('error', error);
+    }
 }

@@ -1,15 +1,17 @@
-import React from "react";
-import { useState } from "react";
-import { createUser } from "../../api/UserApi";
+import React from 'react';
+import { useState } from 'react';
+import { autoLogin, createUser, verifyUser } from '../../api/UserApi';
+import { createUserProfile } from '../../api/profileApi';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { create } from 'domain';
 import "./Register.css";
-import { useNavigate } from "react-router-dom";
 export default function Register() {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     const data = {
       name,
@@ -17,11 +19,24 @@ export default function Register() {
       email,
       password,
     };
-    createUser(data);
-    navigate('/login');
+    createUser(data)
+    try {
+      const response = await createUser(data);
+  
+      if (!response.ok) {
+        console.error('Registration failed');
+        return;
+      }
+      // auto login
+      await autoLogin({ email, password });
+      await createUserProfile(data);
+      navigate('/content');
+    } catch (error) {
+      console.error('error', error);
+    }
   };
   return (
-    <div id="bgall">
+    <div id="bgallz">
       <div id="p-container">
         <div id="p-content">
           <div id="login-image">
@@ -84,7 +99,7 @@ export default function Register() {
               />
             </div>
             <div id="pdz"></div>
-            <div className="btn-sub">
+            <div className="btn-sub2">
                 <button type="submit" id="subbtn">
                   <span>Submit</span>
                 </button>
