@@ -22,7 +22,9 @@ const Job: FC<JobProps> = ({ data }) => {
                 <section className='space-y-4 flex flex-col'>
                     <h1 className='text-3xl'>{data.title}</h1>
                     <p className='font-base font-light'>{data.description}</p>
-                    <span>Star: {data.star}</span>
+                    <div>
+                        <span>✩✩✩✩✩ ({data.star})</span>
+                    </div>
                 </section>
             </section>
             <section className='flex flex-col items-end justify-end'>
