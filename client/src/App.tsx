@@ -10,7 +10,7 @@ import {
   Route,
 } from "react-router-dom";
 import Login from "./page/Login/Login";
-import DashBoard from "./page/dashBoard/DashBoard";
+import DashBoard from "./page/DashBoard/DashBoard";
 import MainContent from "./page/Main/main";
 import JobDetail from "./page/JobDetail/JobDetail";
 import CreateJob from "./page/createJob/createJob";
