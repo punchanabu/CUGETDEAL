@@ -21,18 +21,8 @@
   /* display: flex; */
   position: absolute !important;
   z-index: -1;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
-#bg-gradient {
-  width: 100%;
-  height: 500px;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    180deg,
-    rgba(2, 0, 36, 0) 0%,
-    rgba(128, 106, 166, 1) 0%,
-    rgba(0, 212, 255, 0) 100%
-  );
-  padding-bottom: 90vh;
-}
+

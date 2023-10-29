@@ -48,9 +48,9 @@ export default function Navbar() {
           <Link to="/Register">Register</Link>
         </div>
       </div>
-      <div id="body222" className="w-screen h-screen">
-        <div id="bg-gradient"></div>
-      </div>
+
+
+  
     </div>
   );
 }
