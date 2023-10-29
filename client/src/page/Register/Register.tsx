@@ -82,7 +82,7 @@ export default function Register() {
               />
             </div>
             <div id="pdz"></div>
-            <div className="btn-sub">
+            <div className="btn-sub2">
                 <button type="submit" id="subbtn">
                   <span>Submit</span>
                 </button>
