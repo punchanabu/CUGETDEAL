@@ -2,23 +2,6 @@ import React, { useState } from "react";
 import ProfileEdit from "./profileEdit";
 import ProfileView from "./profileView";
 
-const Data = {
-  profileData: {
-    name: "Hello",
-    surname: "World",
-    location: "bangkok",
-    country: "Thailand",
-    email: "araimairu@gmail.com",
-    tel: "12345",
-  },
-
-  eduData: { faculthy: "ComEng", univer: "chula" },
-
-  workData: { description: "descriptยาวๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆๆ" },
-
-  interestData: { interest: "data analysis" },
-};
-
 const Profile = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [data, setData] = useState({
@@ -37,8 +20,8 @@ const Profile = () => {
   const toggleEdit = () => {
     setIsEdit(!isEdit);
   };
-  const handleSave = (updateddata: typeof data) => {
-    setData(updateddata);
+  const handleSave = (updatedata: typeof data) => {
+    setData(updatedata);
     setIsEdit(false);
   }
 
