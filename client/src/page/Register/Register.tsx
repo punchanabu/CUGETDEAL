@@ -1,14 +1,17 @@
-import React from "react";
-import { useState } from "react";
-import { createUser } from "../../api/UserApi";
+import React from 'react';
+import { useState } from 'react';
+import { autoLogin, createUser, verifyUser } from '../../api/UserApi';
+import { createUserProfile } from '../../api/profileApi';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { create } from 'domain';
 import "./Register.css";
 export default function Register() {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (event: any) => {
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     const data = {
       name,
@@ -16,7 +19,21 @@ export default function Register() {
       email,
       password,
     };
-    createUser(data);
+    createUser(data)
+    try {
+      const response = await createUser(data);
+  
+      if (!response.ok) {
+        console.error('Registration failed');
+        return;
+      }
+      // auto login
+      await autoLogin({ email, password });
+      await createUserProfile(data);
+      navigate('/content');
+    } catch (error) {
+      console.error('error', error);
+    }
   };
   return (
     <div id="bgallz">

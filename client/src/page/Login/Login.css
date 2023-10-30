@@ -125,7 +125,7 @@
         width: 100%;
     }
     
-    button:after {
+    #bgall button:after {
         content: " ";
         width: 0%;
         height: 100%;
@@ -135,13 +135,13 @@
         right: 0;
        }
        
-    button:hover::after {
+    #bgall button:hover::after {
         right: auto;
         left: 0;
         width: 100%;
        }
        
-    button span {
+    #bgall button span {
         text-align: center;
         text-decoration: none;
         width: 100%;
@@ -154,7 +154,7 @@
         transition: all 0.3s ease-in-out;
        }
        
-    button:hover span {
+    #bgall button:hover span {
         color: #183153;
         animation: scaleUp 0.3s ease-in-out;
        }
@@ -311,7 +311,7 @@
         width: 100%;
     }
     
-    button:after {
+    #bgall button:after {
         content: " ";
         width: 0%;
         height: 100%;
@@ -321,13 +321,13 @@
         right: 0;
        }
        
-    button:hover::after {
+    #bgall button:hover::after {
         right: auto;
         left: 0;
         width: 100%;
        }
        
-    button span {
+    #bgall button span {
         text-align: center;
         text-decoration: none;
         width: 100%;
@@ -340,7 +340,7 @@
         transition: all 0.3s ease-in-out;
        }
        
-    button:hover span {
+    #bgall button:hover span {
         color: #183153;
         animation: scaleUp 0.3s ease-in-out;
        }
@@ -509,7 +509,7 @@
         width: 100%;
     }
     
-    button:after {
+    #bgall button:after {
         content: " ";
         width: 0%;
         height: 100%;
@@ -519,13 +519,13 @@
         right: 0;
        }
        
-    button:hover::after {
+    #bgall button:hover::after {
         right: auto;
         left: 0;
         width: 100%;
        }
        
-    button span {
+    #bgall button span {
         text-align: center;
         text-decoration: none;
         width: 100%;
@@ -538,7 +538,7 @@
         transition: all 0.3s ease-in-out;
        }
        
-    button:hover span {
+    #bgall button:hover span {
         color: #183153;
         animation: scaleUp 0.3s ease-in-out;
        }

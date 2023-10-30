@@ -18,9 +18,10 @@ export default function Login() {
         console.log("error", "Invalid email or password");
       }
       // set Jwt to local storage
-      const jwt = await response.json();
-      localStorage.setItem("jwt", jwt);
-      navigate("/content");
+      const res = await response.json();
+      const jwt = res.token;
+      localStorage.setItem('jwt', jwt);
+      navigate('/content');
     } catch (error) {
       console.error("error", error);
     }
