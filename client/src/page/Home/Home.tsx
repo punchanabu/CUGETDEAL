@@ -4,7 +4,7 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div className="w-screen h-screen p-10" id="make-padding-button">
+        <div className=" p-10" id="make-padding-button">
             <div className="text-container space-y-4">
                 <section className='space-y-4'>
                   <h1 className="text-white text-2xl font-bold" id="headertext">สวัสดี!, หางานอยู่หรอ?</h1>
