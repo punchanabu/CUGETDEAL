@@ -29,23 +29,23 @@ export default function Register() {
         <div id="testbox2">
         <div id="logo2"></div>
 
-        <div id="sp-form">
+        <div id="sp-form2" className="flex flex-col">
           <form onSubmit={handleSubmit}>
-            <div>
+            <div className="flex flex-col">
               <div id = "form-box">
                 <label htmlFor="name" id="email_input "></label>
                 <input
                   id="input_border2"
                   type="text"
                   name="name"
-
+                  className="flex"
                   placeholder="Name"
                   onChange={(e) => setName(e.target.value)}
                   value={name}
                 />
               </div>
-              <div id="pdz"></div>
-              <div>
+              <div id="pdz"  className="flex flex-col"></div>
+              <div  className="flex flex-col">
                 <label htmlFor="surname" id="email_input"></label>
                 <input
                   type="text"
@@ -57,8 +57,8 @@ export default function Register() {
                 />
               </div>
             </div>
-            <div id="pdz"></div>
-            <div>
+            <div id="pdz"  className="flex flex-col"></div>
+            <div  className="flex flex-col">
               <label htmlFor="email" id="email_input"></label>
               <input
                 type="email"
@@ -69,7 +69,7 @@ export default function Register() {
                 value={email}
               />
             </div>
-            <div id="pdz"></div>
+            <div id="pdz"  className="flex flex-col"></div>
             <div>
               <label htmlFor="password" id="email_input"></label>
               <input
@@ -81,8 +81,8 @@ export default function Register() {
                 value={password}
               />
             </div>
-            <div id="pdz"></div>
-            <div className="btn-sub2">
+            <div id="pdz"  className="flex flex-col"></div>
+            <div className="btn-sub2 flex flex-col">
                 <button type="submit" id="subbtn">
                   <span>Submit</span>
                 </button>

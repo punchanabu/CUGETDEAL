@@ -5,11 +5,12 @@
     padding-left: 7%;
     padding-right: 7%;
     padding-top: 5%;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
 }
 
 #form-box{
     display: flex;
+
 }
 
 @media screen and (max-width :767px) {
@@ -38,7 +39,7 @@
     }
     
     
-    #sp-form{
+    #sp-form2{
         display: flex;
         flex-direction: column;
         position: relative;
@@ -66,7 +67,7 @@
         width: 100%;
         height: 15%;
         border: 2px solid #F7A6A6;
-        padding: 8px;
+        padding: 7%;
         font-size: 16px;
         color: #F7A6A6;
         background-color: #ffffff;
@@ -213,13 +214,16 @@
     }
     
     
-    #sp-form{
+    #sp-form2{
         position: relative;
         width: 100%;
     }
     
     #testbox2{
-        padding: 10%;
+        display: flex;
+
+        flex-direction: column;
+        padding: 5%;
         border-radius: 35px;
         width: 100%;
         height: 100%;
@@ -231,16 +235,17 @@
         bottom: 0;
         background-size: 60%;
         height: 30%;
+        background-size: cover ;
         background-repeat: no-repeat;
         background-position:center;
     }
     
-    
+   
     #input_border2{
         width: 100%;
         height: 5vh;
         border: 2px solid #F7A6A6;
-        padding: 10px;
+        padding: 7%;
         font-size: 16px;
         color: #F7A6A6;
         background-color: #ffffff;
@@ -384,6 +389,14 @@
         border-radius: 35px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
+    #logo2{
+        background-image: url("./imageRegister/ComponentReg.png");
+        bottom: 0;
+        background-size: 100%;
+        height: 25%;
+        background-repeat: no-repeat;
+        background-position:center;
+    }
     
     #pinkholder{
     
@@ -400,7 +413,10 @@
         width: 80%;
     }
     
-    #sp-form{
+    #sp-form2{
+        align-content: stretch;
+        display: flex;
+        flex-direction: column;
         position: relative;
         width: 100%;
         height: 100%;
@@ -409,21 +425,14 @@
     #testbox2{
         display: flex;
         flex-direction: column;
-        padding: 75px;
+        padding: 3%;
         border-radius: 35px;
         width: 100%;
         height: 100%;
+        align-content: stretch;
     }
     
-    #logo2{
-        background-image: url("./imageRegister/ComponentReg.png");
-        bottom: 0;
-        background-size: 100%;
-        height: 25%;
-        background-repeat: no-repeat;
-        background-position: left center;
-        
-    }
+
     
     
     #input_border2{
@@ -432,7 +441,7 @@
         width: 100%;
         height: 20%;
         border: 2px solid #F7A6A6;
-        padding: 15px;
+        padding: 4%;
         font-size: 16px;
         color: #F7A6A6;
         background-color: #ffffff;
