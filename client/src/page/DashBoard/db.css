@@ -1,0 +1,5 @@
+.custom-bg {
+    background: linear-gradient(180deg, rgba(128, 106, 166, 0.67) 0%, rgba(255, 192, 192, 0.00) 100%),
+                url('/public/Image/bg-image.png');
+    background-size: cover;
+}
