@@ -34,12 +34,12 @@ export default function Login() {
             <div id="pinkholder"></div>
           </div>
         </div>
-        <div id="testbox">
-          <div id="logo"></div>
+        <div id="testbox" className="flex flex-col">
+          <div id="logo" className="flex flex-col"></div>
 
-          <div id="sp-form">
-            <form onSubmit={handleSubmit} id = "box-f">
-              <label id="email_input">
+          <div id="sp-form" className="h-full">
+            <form onSubmit={handleSubmit} id = "box-f" className="flex flex-col space-y-5">
+              <label id="email_input" className="flex flex-col">
                 <input
                   type="email"
                   placeholder="Email"
@@ -49,8 +49,8 @@ export default function Login() {
                 />
               </label>
 
-              {/* <div id="pdz"></div> */}
-              <label id="password_input">
+
+              <label id="password_input" className="flex flex-col"> 
                 <input
                   type="password"
                   placeholder="Password"
@@ -61,8 +61,8 @@ export default function Login() {
               </label>
               <br />
 
-              {/* <div id="pdz"></div> */}
-              <div id = "ab">
+
+              <div id = "ab" className="flex flex-col">
               <div className="btn-sub">
                 <button type="submit" id="subbtn">
                   <span>Submit</span>

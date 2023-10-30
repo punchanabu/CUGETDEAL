@@ -5,7 +5,7 @@
     padding-left: 7%;
     padding-right: 7%;
     padding-top: 5%;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
 }
 
 @media screen and (max-width :767px) {
@@ -41,20 +41,13 @@
     }
     
     #testbox{
-        padding: 10%;
+        padding: 5%;
         border-radius: 35px;
         width: 100%;
         height: 100%;
     }
     
-    #logo{
-        background-image: url("./imageLogin/logologin.png");
-        bottom: 0;
-        background-size: 100%;
-        height: 25%;
-        background-repeat: no-repeat;
-        background-position:center;
-    }
+
     
     
     #input_border{
@@ -179,10 +172,21 @@
          transform: scale(1);
         }
     }
+    #logo{
+        background-image: url("./imageLogin/logologin.png");
+
+        bottom: 0;
+        background-size: contain;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position:center;
+
+    }
+    
 }
 
 
-@media screen and (min-width :768px) and ( max-width :1200px) {
+@media screen and (min-width :768px) and (max-width :1000px){
     #p-container{
  
     
@@ -215,7 +219,7 @@
     }
     
     #testbox{
-        padding: 10%;
+        padding: 5%;
         border-radius: 35px;
         width: 100%;
         height: 100%;
@@ -225,10 +229,11 @@
         background-image: url("./imageLogin/logologin.png");
 
         bottom: 0;
-        background-size: 80%;
-        height: 40%;
+        background-size: cover;
+        height: 100%;
         background-repeat: no-repeat;
         background-position:center;
+
     }
     
     
@@ -236,7 +241,7 @@
         width: 100%;
         height: 5vh;
         border: 2px solid #F7A6A6;
-        padding: 10px;
+        padding: 4%;
         font-size: 16px;
         color: #F7A6A6;
         background-color: #ffffff;
@@ -356,7 +361,7 @@
 }
 
 
-@media screen and (min-width :1201px) {
+@media screen and (min-width :1001px) {
 
     #box-f{
         width: 100%;
@@ -368,13 +373,11 @@
         display: flex;
         position: static;
         width: 100%;
-        height: 100%;
+        height:100%;
         background-color: white;
         border-radius: 35px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        /* background-image: url("./imageLogin/bgcontent2.jpg");
-        background-size: 100%;
-        background-position */
+
     
     }
     
@@ -399,35 +402,38 @@
     
     #p-content{
         flex: 300%;
-        height: 100%;
+        height: auto !important;
         width: 80%;
     }
     
     #sp-form{
-
+        flex-wrap: wrap;
         width: 100%;
         height: 100%;
     }
     
     #testbox{
         display: flex;
+
         flex-direction: column;
-        padding: 75px;
+        padding: 5%;
         border-radius: 35px;
         width: 100%;
         height: 100%;
     }
     
     #logo{
-        display: flex;
-        flex-direction: column;
+ 
         background-image: url("./imageLogin/logologin.png");
         bottom: 0;
-        background-size: 100%;
+        background-size: contain;
         height: 100%;
         width: 100%;
         background-repeat: no-repeat;
-        background-position: left center;
+        background-position: center;
+        flex: 100%;
+        flex-direction: column;
+ 
     }
     
     
@@ -442,10 +448,7 @@
         border-radius: 35px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         position:relative;
-        /* border-radius: 45px;
-        width: 100%;
-        border: 300px;
-        padding : 10px; */
+    
     }
     
     #pdz{
@@ -462,7 +465,7 @@
     
     #email_input{
     
-    
+        
         width: 100%;
     
     
@@ -470,7 +473,7 @@
     
     #password_input{
     
-
+        align-self: flex-start;
         width: 100%;
         
     
