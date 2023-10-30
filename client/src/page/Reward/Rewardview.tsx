@@ -21,7 +21,7 @@ const RewardView: React.FC<RewardData> = ({
 }) => {
     return (
 
-        <main className="text-[#F7A6A6] font-bold">
+        <main className="text-[#F7A6A6] font-bold" id = "biggest-box">
             <div id = "reward-container">
             <div id = "reward-box">
             <div id = "text-reward-box">
