@@ -170,8 +170,8 @@
   #stationery_img {
     background-image: url("./ImageHome/IMG_7555.png");
     background-size: 60vh;
-    width: 100%; /* กำหนดให้รูปภาพไม่เกินความกว้างของหน้าเว็บ */
-    height: 100%; /* ปรับสัดส่วนความสูงตามความกว้าง */
+    width: 100%; 
+    height: 100%; 
     background-repeat: no-repeat;
     background-position: right bottom;
   }
@@ -309,8 +309,8 @@
   #stationery_img {
     background-image: url("./ImageHome/IMG_7555.png");
     background-size: 70vh;
-    width: 100%; /* กำหนดให้รูปภาพไม่เกินความกว้างของหน้าเว็บ */
-    height: 100%; /* ปรับสัดส่วนความสูงตามความกว้าง */
+    width: 100%; 
+    height: 100%;
     background-repeat: no-repeat;
     background-position: right bottom;
   }
@@ -447,8 +447,8 @@
   #stationery_img {
     background-image: url("./ImageHome/IMG_7555.png");
     background-size: 70vh;
-    width: 100%; /* กำหนดให้รูปภาพไม่เกินความกว้างของหน้าเว็บ */
-    height: 100%; /* ปรับสัดส่วนความสูงตามความกว้าง */
+    width: 100%; 
+    height: 100%; 
     background-repeat: no-repeat;
     background-position: right bottom;
   }
