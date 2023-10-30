@@ -5,8 +5,8 @@ import './Home.css';
 const Home = () => {
   return (
  
-    <div className="w-screen h-screen p-10" id = "make-padding-buttom">
-    <div className="text-container">
+    <div className="w-screen h-screen p-10 flex flex-col" id = "make-padding-buttom">
+    <div className="text-container flex flex-col">
     <h1 className="text-white text-2xl font-bold" id = "headertext">สวัสดี! ,หางานอยู่หรอ?</h1>
     <h1 className="text-white text-2xl font-bold" id = "headertext2">ให้เราช่วยคุณสิ!</h1>
 
