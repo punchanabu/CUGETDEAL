@@ -32,7 +32,7 @@ export default function Register() {
         <div id="sp-form">
           <form onSubmit={handleSubmit}>
             <div>
-              <div>
+              <div id = "form-box">
                 <label htmlFor="name" id="email_input "></label>
                 <input
                   id="input_border2"
