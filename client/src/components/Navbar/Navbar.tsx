@@ -22,7 +22,6 @@ export default function Navbar() {
             setIsLoggedIn(true);
         } catch (error) {
             console.error("Error fetching user details:", error);
-            setIsLoggedIn(false);
         }
     };
 

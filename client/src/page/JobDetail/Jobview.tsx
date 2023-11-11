@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchHome1ByTitle } from "../../api/ContentApi";
 import { useNavigate } from "react-router-dom";
 import { getUserId } from "../../api/UserApi";
+import Spinner from "../../components/Spinner";
 
 interface JobDetailsData {
     title: string;
@@ -67,7 +68,12 @@ const JobView: React.FC = () => {
         fetchData();
     }, [titleValue, navigate]);
 
-    if (!jobData) return <div className="text-center mt-5">Loading...</div>;
+    if (!jobData) return (
+        <div className="flex justify-center items-center w-screen h-screen">
+            <Spinner/>
+        </div>
+    
+    );
 
     return (
         <div className="container mx-auto p-6">
