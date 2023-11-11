@@ -19,8 +19,10 @@ export default function Navbar() {
         try {
             const userProfile = await fetchUserProfile(token);
             setUserName(userProfile.name); // Assuming the API returns an object with a 'name' field
+            setIsLoggedIn(true);
         } catch (error) {
             console.error("Error fetching user details:", error);
+            setIsLoggedIn(false);
         }
     };
 

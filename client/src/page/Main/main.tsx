@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import { populateJobBoard } from '../../api/ContentApi';
 import { useNavigate } from "react-router-dom";
+import Spinner from "../../components/Spinner";
 interface JobForm {
     userId: object;
     title: string;
@@ -69,9 +70,9 @@ export default function MainContent() {
       populate();
     }, []);
     return  (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-gray-100 min-h-screen flex justify-center items-center">
             {loading ? 
-                <p className="text-center text-xl mt-5">Loading...</p> 
+                <Spinner/>
                 : 
                 <main className="container mx-auto p-6">
                     {/* Top section for text and button */}

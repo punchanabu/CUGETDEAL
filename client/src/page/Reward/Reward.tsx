@@ -6,13 +6,10 @@ export default function Reward() {
         { id: 1, title: "Free Coffee Voucher", description: "Get a free cup of coffee at any of our partner cafes." },
         { id: 2, title: "Discount Coupon", description: "Enjoy a 20% discount on your next purchase." },
         { id: 3, title: "Exclusive T-Shirt", description: "An exclusive t-shirt for our top members." },
-        // ... other rewards ...
     ];
 
     const handleRedeem = (rewardId: string) => {
-        // Implement redeem logic
         console.log("Redeeming reward with ID:", rewardId);
-        // You might want to connect this to your backend
     };
 
     return (
