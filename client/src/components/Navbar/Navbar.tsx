@@ -13,7 +13,7 @@ export default function Navbar() {
             setIsLoggedIn(true);
             fetchUserDetails(token);
         }
-    }, []);
+    }, [userName]);
 
     const fetchUserDetails = async (token: string) => {
         try {
