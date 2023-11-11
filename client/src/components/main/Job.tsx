@@ -19,7 +19,6 @@ const Job: FC<JobProps> = ({ data }) => {
     return (
         <div className='bg-white shadow-lg rounded-lg overflow-hidden my-4'>
             <div className='flex items-center p-4'>
-                <img className='w-16 h-16 rounded-full object-cover' src="https://i.pinimg.com/236x/51/96/3f/51963f47ba77810edde84122d32763f3.jpg" alt="Job Thumbnail" />
                 <div className='ml-4'>
                     <h2 className='text-lg font-semibold text-gray-800'>{data.title}</h2>
                     <p className='text-gray-600'>{data.description}</p>
