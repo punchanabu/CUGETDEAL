@@ -57,9 +57,6 @@ A step-by-step series of examples that tell you how to get a development environ
 - [React](https://reactjs.org/) - The web framework used for the frontend.
 - [Node.js](https://nodejs.org/) - The runtime environment for the backend.
 
-## Contributing
-
-Please read [CONTRIBUTING.md](link-to-your-contributing.md-file) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
