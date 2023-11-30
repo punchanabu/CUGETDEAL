@@ -1,4 +1,3 @@
-```markdown
 # CUGETDEAL
 
 CUGETDEAL is a dynamic job posting and management platform, built using React for the frontend and Node.js for the backend. It simplifies the process of job posting, tracking, and management for both users and administrators.
@@ -64,6 +63,8 @@ Please read [CONTRIBUTING.md](link-to-your-contributing.md-file) for details on 
 
 ## Authors
 
-See also the list of [contributors](https://github.com/punchanabu/CUGETDEAL/contributors) who participated in this project.
-
-
+- **punchanabu**[YourGitHubProfile](https://github.com/punchanabu)
+- **MoosaTae**[YourGitHubProfile](https://github.com/MoosaTae)
+- **punchpnp**[YourGitHubProfile](https://github.com/punchpnp)
+- **Chulinuwu**[YourGitHubProfile](https://github.com/Chulinuwu)
+- **Xxpeira12**[YourGitHubProfile](https://github.com/Xxperia12)
