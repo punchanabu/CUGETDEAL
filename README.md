@@ -63,8 +63,8 @@ Please read [CONTRIBUTING.md](link-to-your-contributing.md-file) for details on 
 
 ## Authors
 
-- **punchanabu**[YourGitHubProfile](https://github.com/punchanabu)
-- **MoosaTae**[YourGitHubProfile](https://github.com/MoosaTae)
-- **punchpnp**[YourGitHubProfile](https://github.com/punchpnp)
-- **Chulinuwu**[YourGitHubProfile](https://github.com/Chulinuwu)
-- **Xxpeira12**[YourGitHubProfile](https://github.com/Xxperia12)
+- [punchanabu](https://github.com/punchanabu)
+- [MoosaTae](https://github.com/MoosaTae)
+- [punchpnp](https://github.com/punchpnp)
+- [Chulinuwu](https://github.com/Chulinuwu)
+- [Xxperia12](https://github.com/Xxperia12)
