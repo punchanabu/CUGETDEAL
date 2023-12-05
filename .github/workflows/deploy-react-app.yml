@@ -1,15 +1,15 @@
-name: React App Deployment # name of the workflo
+name: React App Deployment
 
 on:
   push:
     branches:
-      - deploy-react-app # branch name
+      - deploy # branch name
 
 jobs:
   deploy-react-to-gh-pages:
     runs-on: ubuntu-latest
     env:
-      EXAMPLE: example # environment variable
+      EXAMPLE: deploy # environment variable
 
     steps:
       # checkout the repository content to github runner
