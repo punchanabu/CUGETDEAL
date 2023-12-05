@@ -1,0 +1,19 @@
+{
+  "name": "cugetdeal",
+  "homepage": "https://MoosaTae.github.io/CUGETDEAL/",
+  "version": "1.0.0",
+  "description": "CUGETDEAL is a dynamic job posting and management platform, built using React for the frontend and Node.js for the backend. It simplifies the process of job posting, tracking, and management for both users and administrators.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && npm start & cd ../client && npm start",
+    "install": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build && cd ../server && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}
